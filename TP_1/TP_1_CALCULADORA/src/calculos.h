@@ -19,6 +19,4 @@ int multiplicar(int numero1, int numero2);
 
 int factorial(int numero);
 
-
-
 #endif /* CALCULOS_H_ */

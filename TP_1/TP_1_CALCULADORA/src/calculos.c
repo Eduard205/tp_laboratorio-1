@@ -5,45 +5,43 @@
  *
  */
 
-
-int sumar(int numero1, int numero2){
+int sumar(int numero1, int numero2) {
 	int suma;
-		suma = numero1 + numero2;
+	suma = numero1 + numero2;
 	return suma;
 }
 
-int restar(int numero1, int numero2){
+int restar(int numero1, int numero2) {
 	int resta;
-		resta = numero1 - numero2;
+	resta = numero1 - numero2;
 	return resta;
 }
 
-float dividir(int numero1, int numero2){
+float dividir(int numero1, int numero2) {
 	float division;
-		division= (float)numero1 / numero2;
+	division = (float) numero1 / numero2;
 	return division;
 }
 
-int multiplicar(int numero1, int numero2){
+int multiplicar(int numero1, int numero2) {
 	int producto;
-		producto = numero1 * numero2;
+	producto = numero1 * numero2;
 	return producto;
 }
 
-int factorial(int numero){
+int factorial(int numero) {
 	int cont;
-	int factorial=1;
+	int factorial = 1;
 
-		if(numero<0){
-			numero*=-1;
-			for(cont=1;cont<=numero;cont++){
-			factorial*=cont;
-			}
+	if (numero < 0) {
+		numero *= -1;
+		for (cont = 1; cont <= numero; cont++) {
+			factorial *= cont;
 		}
-		else{
-			for(cont=1;cont<=numero;cont++){
-				factorial*=cont;
-			}
+	} else {
+		for (cont = 1; cont <= numero; cont++) {
+			factorial *= cont;
 		}
+	}
 	return factorial;
 }
