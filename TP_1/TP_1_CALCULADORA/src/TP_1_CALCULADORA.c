@@ -34,11 +34,99 @@ e)  “El factorial de A es: r1 y El factorial de B es: r2”
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "calculos.h"
+
 
 int main(void) {
 setbuf(stdout, NULL);
 
+int primerOperando;
+int segundoOperando;
+int opcion;
+char resp='s';
+int flagOpcion1=0;
+int flagOpcion2=0;
+int flagDivision=0;
+int resulSuma=0;
+int resulResta=0;
+int resulProducto=0;
+float resulDivision=0;
+int resulFactorial1;
+int resulFactorial2;
 
-	printf("Proyecto Modificado");
+do{
+	printf("\nIngrese una opcion del menu (1, 2, 3, 4, 5):\n1-Ingresar primer operando\n2-Ingresar segundo operando\n3-Calcular todas las operaciones\n4-Informar resultados\n5-Salir\n");
+		scanf("%d", &opcion);
+
+		while(opcion<1 || opcion>5){
+			printf("Ingreso una opción invalida, las opciones disponibles son (1, 2, 3, 4, 5):");
+			scanf("%d", &opcion);
+			}
+
+		switch(opcion){
+
+			case 1:
+				printf("Ingresar primer operando: ");
+					scanf("%d", &primerOperando);
+					flagOpcion1=1;
+				printf("Primer operando ingresado: %d\n", primerOperando);
+					break;
+
+			case 2:
+				printf("Ingresar segundo operando: ");
+					scanf("%d", &segundoOperando);
+					flagOpcion2=1;
+				printf("Segundo operando ingresado: %d\n", segundoOperando);
+					break;
+
+			case 3:
+				if(flagOpcion1==0 || flagOpcion2==0){
+					printf("Para calcular debe ingresar los dos operandos\n");
+				}
+				else{
+					resulSuma = sumar(primerOperando,segundoOperando);
+					resulResta = restar(primerOperando,segundoOperando);
+					resulProducto = multiplicar(primerOperando,segundoOperando);
+					resulFactorial1 = factorial(primerOperando);
+					resulFactorial2 = factorial(segundoOperando);
+					if(segundoOperando!=0){
+						resulDivision = dividir(primerOperando,segundoOperando);
+						flagDivision=1;
+						}
+
+					printf("Se calcularon todas las operaciones\n");
+
+					}
+					break;
+
+			case 4:
+				if(flagOpcion1==0 || flagOpcion2==0){
+					printf("Debe ingresar los dos operandos para informar resultados\n");
+					}
+					else{
+						printf("a) El resultado de %d + %d es: %d\n", primerOperando, segundoOperando, resulSuma);
+						printf("b) El resultado de %d - %d es: %d\n", primerOperando, segundoOperando, resulResta);
+						if(flagDivision==1){
+							printf("c) El resultado de %d / %d es: %.2f\n", primerOperando, segundoOperando, resulDivision);
+							}
+							else{
+								printf("No se puede dividir entre '0' \n");
+								}
+						printf("d) El resultado de %d * %d es: %d\n", primerOperando, segundoOperando, resulProducto);
+						printf("e) El factorial de %d es: %d y El factorial de %d es: %d\n", primerOperando, resulFactorial1, segundoOperando, resulFactorial2);
+						}
+					break;
+
+			case 5:
+				printf("A salido del programa");
+				resp=!'s';
+				break;
+		}
+
+
+}while(resp=='s');
+
+
+
 	return EXIT_SUCCESS;
 }
