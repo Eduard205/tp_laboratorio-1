@@ -7,7 +7,7 @@
 
 #ifndef CALCULOS_H_
 #define CALCULOS_H_
-#include "calculos.h"
+
 
 int sumar(int numero1, int numero2);
 
