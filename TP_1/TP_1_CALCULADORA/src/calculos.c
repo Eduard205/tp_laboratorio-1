@@ -5,60 +5,30 @@
  *
  */
 
-/**
- * \brief: Suma dos numeros enteros y devuelve el resultado.
- * \param: Recibe dos enteros por valor.
- * \return: Retorna la suma de los numeros ingresados.
- *
- */
 int sumar(int numero1, int numero2) {
 	int suma;
 	suma = numero1 + numero2;
 	return suma;
 }
 
-/**
- * \brief: Resta dos numeros enteros y devuelve el resultado.
- * \param: Recibe dos enteros por valor.
- * \return: Retorna la resta de los numeros ingresados.
- *
- */
 int restar(int numero1, int numero2) {
 	int resta;
 	resta = numero1 - numero2;
 	return resta;
 }
 
-/**
- * \brief: Divide dos numeros enteros y devuelve el resultado.
- * \param: Recibe dos enteros por valor.
- * \return: Retorna un float con la division de los numeros ingresados.
- *
- */
 float dividir(int numero1, int numero2) {
 	float division;
 	division = (float) numero1 / numero2;
 	return division;
 }
 
-/**
- * \brief: Multiplica dos numeros enteros y devuelve el resultado.
- * \param: Recibe dos enteros por valor.
- * \return: Retorna el producto de los numeros ingresados.
- *
- */
 int multiplicar(int numero1, int numero2) {
 	int producto;
 	producto = numero1 * numero2;
 	return producto;
 }
 
-/**
- * \brief: Calcula el factorial de un numero entero y devuelve el resultado.
- * \param: Recibe un entero por valor.
- * \return: Retorna el factorial del numero ingresado.
- *
- */
 int factorial(int numero) {
 	int cont;
 	int factorial = 1;
