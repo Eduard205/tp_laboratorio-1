@@ -26,6 +26,5 @@ int altaEmpleado(eEmpleado array[], int posicion, int* contadorId);
 int buscarEmpleado(eEmpleado array[], int tam, int id);
 int modificarEmpleado(eEmpleado array[], int tam);
 eEmpleado modificarUnEmpleado(eEmpleado array);
-int bajaEmpleado(eEmpleado array[], int tam);
 
 #endif /* ARRAYEMPLEADOS_H_ */

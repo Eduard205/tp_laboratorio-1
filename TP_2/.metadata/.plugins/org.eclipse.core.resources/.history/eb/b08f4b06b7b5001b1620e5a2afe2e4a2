@@ -147,7 +147,7 @@ int bajaEmpleado(eEmpleado array[], int tam) {
 	int rtn = 0;
 	int posicion;
 	int idEmpleado;
-
+	eEmpleado arrayAux;
 
 	printf("Ingrese el id del empleado a eliminar: ");
 	scanf("%d", &idEmpleado);
@@ -165,14 +165,15 @@ int bajaEmpleado(eEmpleado array[], int tam) {
 
 	array[posicion].isEmpty=-1;
 
-	rtn = 1;
+	array[posicion] = arrayAux;
 
+	rtn = 1;
 	if (rtn == 1) {
-		printf("Se elimino al empleado con el id %d\n", array[posicion].id);
-		printf("Nombre: %s\n", array[posicion].nombre);
-		printf("Apellido: %s\n", array[posicion].apellido);
-		printf("Sector: %d\n", array[posicion].sector);
-		printf("Sueldo: %.2f\n", array[posicion].sueldo);
+		printf("Se modifico los datos del empleado\n");
+		printf("Nuevo Nombre: %s\n", array[posicion].nombre);
+		printf("Nuevo Apellido: %s\n", array[posicion].apellido);
+		printf("Nuevo Sector: %d\n", array[posicion].sector);
+		printf("Nuevo Sueldo: %.2f\n", array[posicion].sueldo);
 	}
 
 	return rtn;

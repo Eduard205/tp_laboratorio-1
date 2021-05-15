@@ -142,41 +142,6 @@ int modificarEmpleado(eEmpleado array[], int tam) {
 	return rtn;
 }
 
-int bajaEmpleado(eEmpleado array[], int tam) {
-
-	int rtn = 0;
-	int posicion;
-	int idEmpleado;
-
-
-	printf("Ingrese el id del empleado a eliminar: ");
-	scanf("%d", &idEmpleado);
-	while (idEmpleado < 1 || idEmpleado > 1000) {
-		printf("Error. Ingrese un Id de empleado entre (1-1000): ");
-		scanf("%d", &idEmpleado);
-	}
-
-	while (buscarEmpleado(array, tam, idEmpleado) == -1) {
-		printf("No existe el id ingresado, reingrese id del empleado: ");
-		scanf("%d", &idEmpleado);
-	}
-
-	posicion = buscarEmpleado(array, tam, idEmpleado);
-
-	array[posicion].isEmpty=-1;
-
-	rtn = 1;
-
-	if (rtn == 1) {
-		printf("Se elimino al empleado con el id %d\n", array[posicion].id);
-		printf("Nombre: %s\n", array[posicion].nombre);
-		printf("Apellido: %s\n", array[posicion].apellido);
-		printf("Sector: %d\n", array[posicion].sector);
-		printf("Sueldo: %.2f\n", array[posicion].sueldo);
-	}
-
-	return rtn;
-}
 /*void mostrarInicializacion(eEmpleado array[], int tam) {
 
  for (int i = 0; i < tam; i++) {

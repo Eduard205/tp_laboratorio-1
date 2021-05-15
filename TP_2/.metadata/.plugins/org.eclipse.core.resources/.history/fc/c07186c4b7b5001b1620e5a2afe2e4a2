@@ -62,8 +62,7 @@ int main(void) {
 				break;
 
 			case 3:
-				bajaEmpleado(listaEmpleados, TAM);
-				break;
+
 			case 4:
 
 			case 5:
