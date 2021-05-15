@@ -1,0 +1,52 @@
+/*
+ * ArrayEmpleados.c
+ *Desarrollo de funciones de la biblioteca ArrayEmpleados.h
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include "ArrayEmpleados.h"
+
+int inicializarEmpleado(eEmpleado array[], int tam) {
+	int devolucion= -1;
+	if (array != NULL && tam > 0) {
+		for (int i = 0; i < tam; i++) {
+			array[i].isEmpty=1;
+			array[i].id =0;
+			strcpy(array[i].nombre," ");
+			strcpy(array[i].apellido," ");
+			array[i].sector=0;
+			array[i].sueldo=0;
+		}
+		devolucion= 0;
+	}
+	return devolucion;
+}
+int buscarLibre(eEmpleado array[], int* posicion, int tam) {
+
+int rtn=-1;
+	if (array != NULL && posicion != NULL && tam > 0) {
+
+		for (int i = 0; i < tam; i++) {
+			if (array[i].isEmpty==1) {
+				*posicion = i;
+				rtn=i;
+				break;
+			}
+	}
+	return rtn;
+}
+/*void mostrarInicializacion(eEmpleado array[], int tam) {
+
+	for (int i = 0; i < tam; i++) {
+		printf("isEmpty: %d\n", array[i].isEmpty);
+		printf("Id: %d\n", array[i].id);
+		printf("Nombre: %s\n", array[i].nombre);
+		printf("Apellido: %s\n", array[i].apellido);
+		printf("Sector: %d\n", array[i].sector);
+		printf("Sueldo: %.2f\n", array[i].sueldo);
+	}
+	return;
+	}
+	*/

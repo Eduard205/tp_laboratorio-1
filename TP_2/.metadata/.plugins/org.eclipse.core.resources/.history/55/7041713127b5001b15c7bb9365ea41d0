@@ -1,0 +1,96 @@
+/*
+ * ArrayEmpleados.c
+ *Desarrollo de funciones de la biblioteca ArrayEmpleados.h
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include "ArrayEmpleados.h"
+
+int inicializarEmpleado(eEmpleado array[], int tam) {
+	int devolucion= -1;
+	if (array != NULL && tam > 0) {
+		for (int i = 0; i < tam; i++) {
+			array[i].isEmpty=1;
+			array[i].id =0;
+			strcpy(array[i].nombre," ");
+			strcpy(array[i].apellido," ");
+			array[i].sector=0;
+			array[i].sueldo=0;
+		}
+		devolucion= 0;
+	}
+	return devolucion;
+}
+
+
+
+int buscarLibre(eEmpleado array[], int *posicion, int tam) {
+
+	if (array != NULL && posicion != NULL && tam > 0) {
+
+		for (int i = 0; i < tam; i++) {
+			if (array[i].isEmpty == 1) {
+				*posicion = i;
+				break;
+			}
+		}
+	}
+	return 0;
+}
+
+void altaEmpleado(eEmpleado array[], int posicion) {
+
+	printf("\nIngresar legajo del estudiante: ");
+	scanf("%d", &array[posicion].legajo);
+
+	printf("Ingresar apellido: ");
+	fflush(stdin);
+	gets(array[posicion].apellido);
+
+	printf("Ingresar sexo: ");
+	fflush(stdin);
+	scanf("%c", &array[posicion].sexo);
+
+	printf("Ingresar edad: ");
+	scanf("%d", &array[posicion].edad);
+
+	printf("Ingresar Nota 1: ");
+	scanf("%d", &array[posicion].nota1);
+
+	printf("Ingresar Nota 2: ");
+	scanf("%d", &array[posicion].nota2);
+
+	array[posicion].isEmpty = 0;
+
+	/*	printf("Nro de legajo: %d\n", array[i].legajo);
+	 printf("Apellido: %s\n", array[i].apellido);
+	 printf("Sexo: %c\n", array[i].sexo);
+	 printf("Sexo: %c\n", array[i].sexo);
+	 printf("Nota1: %d\n", array[i].nota1);
+	 printf("Nota2: %d\n", array[i].nota2);
+	 printf("Promedio: %f.2f\n", array[i].promedio);
+	 */
+
+	return;
+}
+
+
+
+
+
+
+
+int mostrarInicializacion(eEmpleado array[], int tam) {
+
+	for (int i = 0; i < tam; i++) {
+		printf("isEmpty: %d\n", array[i].isEmpty);
+		printf("Id: %d\n", array[i].id);
+		printf("Nombre: %s\n", array[i].nombre);
+		printf("Apellido: %s\n", array[i].apellido);
+		printf("Sector: %d\n", array[i].sector);
+		printf("Sueldo: %.2f\n", array[i].sueldo);
+	}
+	return 0;
+}

@@ -1,0 +1,27 @@
+/*
+ ============================================================================
+ Name        : TP_2_ABM.c
+ Author      : Eduard Brito Hernandez - División: 1-E
+ Version     : Nomina de empleados
+ Description :
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include "ArrayEmpleados.h"
+#define TAM 1000
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	eEmpleado listaEmpleados[TAM];
+
+	inicializarEmpleado(listaEmpleados, TAM);
+
+
+
+	return EXIT_SUCCESS;
+}
