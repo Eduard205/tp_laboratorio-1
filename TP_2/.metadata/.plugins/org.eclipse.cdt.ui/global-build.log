@@ -1,0 +1,4 @@
+21:11:59 **** Rebuild of configuration Debug for project TP_2_ABM ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2_ABM.o" "..\\src\\TP_2_ABM.c" 
+gcc -o TP_2_ABM.exe "src\\TP_2_ABM.o" 
