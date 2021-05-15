@@ -22,7 +22,9 @@ int inicializarEmpleado(eEmpleado array[], int tam);
 //int mostrarInicializacion(eEmpleado array[], int tam);
 
 int buscarLibre(eEmpleado array[], int *posicion, int tam);
-
 int altaEmpleado(eEmpleado array[], int posicion, int* contadorId);
+int buscarEmpleado(eEmpleado array[], int tam, int id);
+int modificarEmpleado(eEmpleado array[], int tam);
+eEmpleado modificarUnEmpleado(eEmpleado array);
 
 #endif /* ARRAYEMPLEADOS_H_ */

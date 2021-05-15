@@ -23,6 +23,9 @@ int main(void) {
 	int posicion;
 	int contadorId=1;
 
+
+
+
 	inicializarEmpleado(listaEmpleados, TAM);
 
 	//mostrarInicializacion(listaEmpleados, TAM);
@@ -54,12 +57,9 @@ int main(void) {
 				break;
 				//flagOpcion1 = 1;
 
-				break;
-
 			case 2:
-				//buscarLibre(listaAlumnos,&posicion,TAM);
-				//printf("posicion: %d",posicion);
-				//	break;
+				modificarEmpleado(listaEmpleados, TAM);
+				break;
 
 			case 3:
 

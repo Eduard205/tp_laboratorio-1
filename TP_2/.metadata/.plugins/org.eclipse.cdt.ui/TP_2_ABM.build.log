@@ -1,7 +1,8 @@
-03:02:09 **** Incremental Build of configuration Debug for project TP_2_ABM ****
+16:29:21 **** Incremental Build of configuration Debug for project TP_2_ABM ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayEmpleados.o" "..\\src\\ArrayEmpleados.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2_ABM.o" "..\\src\\TP_2_ABM.c" 
 gcc -o TP_2_ABM.exe "src\\ArrayEmpleados.o" "src\\TP_2_ABM.o" 
 
-03:02:10 Build Finished. 0 errors, 0 warnings. (took 437ms)
+16:29:22 Build Finished. 0 errors, 0 warnings. (took 430ms)
 
