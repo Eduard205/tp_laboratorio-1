@@ -12,7 +12,7 @@
 #include <ctype.h>
 #include <string.h>
 #include "ArrayEmpleados.h"
-#define TAM 1000
+#define TAM 2
 
 int main(void) {
 	setbuf(stdout, NULL);
