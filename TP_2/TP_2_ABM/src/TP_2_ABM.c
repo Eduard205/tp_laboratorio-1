@@ -22,13 +22,13 @@ int main(void) {
 	char resp = 's';
 	int posicion;
 	int contadorId=1;
-
+	int criterioDeOrdenamiento;
+	int flagOpcion1 = 0;
 
 
 
 	inicializarEmpleado(listaEmpleados, TAM);
 
-	//mostrarInicializacion(listaEmpleados, TAM);
 
 
 	do {
@@ -53,26 +53,62 @@ int main(void) {
 					{
 						altaEmpleado(listaEmpleados, posicion, &contadorId);
 						contadorId++;
+						flagOpcion1 = 1;
 					}
 				break;
-				//flagOpcion1 = 1;
+
 
 			case 2:
+				if(flagOpcion1 ==1){
 				modificarEmpleado(listaEmpleados, TAM);
+				}
+				else{
+					printf("No ha dado de alta empleados, ingrese a la opción 1");
+				}
 				break;
 
 			case 3:
+				if(flagOpcion1 ==1){
 				bajaEmpleado(listaEmpleados, TAM);
+				}
+				else{
+					printf("No ha dado de alta empleados, ingrese a la opción 1");
+				}
 				break;
 			case 4:
+				if(flagOpcion1 ==1){
+				printf("\nIngrese criterio de ordenamiento:"
+						"\n1-Ordenar de forma descendente lista de empleados por sector"
+						"\n-1-Ordenar de forma ascendente lista de empleados por sector");
+
+				scanf("%d", &criterioDeOrdenamiento);
+
+								while (criterioDeOrdenamiento!= 1 && criterioDeOrdenamiento!=-1) {
+								printf("Ingreso un criterio valido, las opciones disponibles son (1 o -1): ");
+								scanf("%d", &criterioDeOrdenamiento);
+										}
+
+				ordenarEmpleados(listaEmpleados, TAM, criterioDeOrdenamiento);
+				if(mostrarEmpleados(listaEmpleados, TAM)){
+					system("pause");
+				}
+				else{
+						printf("No hay empleados para mostrar");
+				}
+				}
+				else{
+				printf("No ha dado de alta empleados, ingrese a la opción 1");
+				}
+				break;
+
 
 			case 5:
 				printf("A salido del programa");
 				resp = !'s';
 				break;
-			}
 
-		} while (resp == 's');
+		}
+	}while (resp == 's');
 
 	return EXIT_SUCCESS;
 }

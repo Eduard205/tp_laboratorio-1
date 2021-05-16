@@ -1,0 +1,85 @@
+/*
+ ============================================================================
+ Name        : TP_2_ABM.c
+ Author      : Eduard Brito Hernandez - División: 1-E
+ Version     : Nomina de empleados
+ Description :
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#include "ArrayEmpleados.h"
+#define TAM 2
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	eEmpleado listaEmpleados[TAM];
+	int opcion;
+	char resp = 's';
+	int posicion;
+	int contadorId=1;
+
+
+
+
+	inicializarEmpleado(listaEmpleados, TAM);
+
+	//mostrarInicializacion(listaEmpleados, TAM);
+
+
+	do {
+			printf("\nIngrese una opcion del menu:"
+					"\n1-Alta de empleado"
+					"\n2-Modificar empleado"
+					"\n3-Baja empleado"
+					"\n4-Informes"
+					"\n5-Salir\n");
+			scanf("%d", &opcion);
+
+			while (opcion < 1 || opcion > 5) {
+				printf(
+						"Ingreso una opción invalida, las opciones disponibles son (1, 2, 3, 4, 5): ");
+				scanf("%d", &opcion);
+			}
+
+			switch (opcion) {
+
+			case 1:
+				 if(buscarLibre(listaEmpleados, &posicion, TAM) != -1)
+					{
+						altaEmpleado(listaEmpleados, posicion, &contadorId);
+						contadorId++;
+					}
+				break;
+				//flagOpcion1 = 1;
+
+			case 2:
+				modificarEmpleado(listaEmpleados, TAM);
+				break;
+
+			case 3:
+				bajaEmpleado(listaEmpleados, TAM);
+				break;
+			case 4:
+
+				if(mostrarEmpleados(listaEmpleados, TAM)){
+					system("pause");
+				}
+				else{
+						printf("No hay empleados para mostrar");
+				}
+				break;
+			case 5:
+				printf("A salido del programa");
+				resp = !'s';
+				break;
+			}
+
+		} while (resp == 's');
+
+	return EXIT_SUCCESS;
+}
